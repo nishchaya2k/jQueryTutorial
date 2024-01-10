@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <ul id="list">
+        <li>orange</li>
+        <li>grapes</li>
+        <li>apple</li>
+        <li>mango</li>
+    </ul>
+
+    <div id="box1" class="test">
+        <h2>Mouse Events</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus sequi iure dolores hic maiores
+            earum rerum, nihil, obcaecati aliquam maxime rem? Ad eaque in ratione dolor eligendi vero vitae!</p>
+    </div>
+
+    <!-- <div id="box2" class="test">
+        <h2>Keyboard Events</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis repellendus sequi iure dolores hic maiores
+            earum rerum, nihil, obcaecati aliquam maxime rem? Ad eaque in ratione dolor eligendi vero vitae!</p>
+    </div> -->
+
+    <script>
+        //simultaneous task
+        $(document).ready(function () {
+            alert(1);
+            $("ul li:eq(3)").css("border", "2px solid red")
+
+            //mouse events  -> click,dbclick,contextmenu,mouseenter,mouseleave
+            $("#box1").css({ "border": "2px solid black", "padding": "5px", "margin": "4px" }).click(function () {
+                $("#box1").css({ "background-color": "green" })  //can using click function separately also no need to include in this
+            })
+
+            $("#box1").dblclick(function () {
+                $("#box1").css({ "background-color": "orange" })
+            })
+
+
+            //keyboard events
+            $("body").keypress(function () {    //provide information that produces a character value, so doesn't work on shift,ctrl & function key
+                $('body').css({ "background-color": 'yellow' })
+            })
+            $("body").keyup(function () {
+                $(this).css({ "background-color": 'pink' })   //method applying on body so you can use 'this also inplace of it'  
+            })
+            $("body").keydown(function () {   //does provide information about the character that was pressed, so fired on every key
+                $(this).css({ "background-color": 'blue' })
+
+
+                //form events
+
+
+
+
+
+            })
+
+    </script>
+</body>
+
+</html>
